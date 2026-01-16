@@ -1,0 +1,107 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  catalog:
+    build:
+      context: "/home/guilherme/RiderProjects/AlerquimTeste"
+      dockerfile: "Catalog.API/Dockerfile"
+      target: "base"
+      args:
+        BUILD_CONFIGURATION: "Debug"
+    command: []
+    entrypoint:
+    - "/opt/JetBrains/RiderDebuggerTools/linux-x64/JetBrains.Debugger.Worker"
+    - "--runtimeconfig"
+    - "/opt/JetBrains/RiderDebuggerTools/JetBrains.Debugger.Worker.runtimeconfig.json"
+    - "--mode=server"
+    - "--frontend-port=57000"
+    - "--backend-port=57200"
+    - "--roslyn-worker-port=57400"
+    - "--timeout=60"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      RIDER_DEBUGGER_LOG_DIR: "/var/opt/JetBrains/RiderDebuggerTools"
+      RESHARPER_LOG_CONF: "/etc/opt/JetBrains/RiderDebuggerTools/backend-log.xml"
+    image: "catalog.api:dev"
+    ports:
+    - "127.0.0.1:57000:57000"
+    - "127.0.0.1:57200:57200"
+    - "127.0.0.1:57400:57400"
+    volumes:
+    - "/home/guilherme/RiderProjects/AlerquimTeste/Catalog.API:/app:rw"
+    - "/home/guilherme/RiderProjects/AlerquimTeste:/src:rw"
+    - "/home/guilherme/.nuget/packages:/home/app/.nuget/packages"
+    - "/home/guilherme/.local/share/JetBrains/RiderRemoteDebugger/2025.1.4/Linux64:/opt/JetBrains/RiderDebuggerTools"
+    - "/opt/Rider/bin/backend-log.xml:/etc/opt/JetBrains/RiderDebuggerTools/backend-log.xml"
+    - "/home/guilherme/.cache/JetBrains/Rider2025.1/log/DebuggerWorker/JetBrains.Debugger.Worker.2026_1_16_14_37_13:/var/opt/JetBrains/RiderDebuggerTools:rw"
+    working_dir: "/app"
+  identity:
+    build:
+      context: "/home/guilherme/RiderProjects/AlerquimTeste"
+      dockerfile: "Identity.API/Dockerfile"
+      target: "base"
+      args:
+        BUILD_CONFIGURATION: "Debug"
+    command: []
+    entrypoint:
+    - "/opt/JetBrains/RiderDebuggerTools/linux-x64/JetBrains.Debugger.Worker"
+    - "--runtimeconfig"
+    - "/opt/JetBrains/RiderDebuggerTools/JetBrains.Debugger.Worker.runtimeconfig.json"
+    - "--mode=server"
+    - "--frontend-port=57000"
+    - "--backend-port=57200"
+    - "--roslyn-worker-port=57401"
+    - "--timeout=60"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      RIDER_DEBUGGER_LOG_DIR: "/var/opt/JetBrains/RiderDebuggerTools"
+      RESHARPER_LOG_CONF: "/etc/opt/JetBrains/RiderDebuggerTools/backend-log.xml"
+    image: "identity.api:dev"
+    ports:
+    - "127.0.0.1:57001:57000"
+    - "127.0.0.1:57201:57200"
+    - "127.0.0.1:57401:57401"
+    volumes:
+    - "/home/guilherme/RiderProjects/AlerquimTeste/Identity.API:/app:rw"
+    - "/home/guilherme/RiderProjects/AlerquimTeste:/src:rw"
+    - "/home/guilherme/.nuget/packages:/home/app/.nuget/packages"
+    - "/home/guilherme/.local/share/JetBrains/RiderRemoteDebugger/2025.1.4/Linux64:/opt/JetBrains/RiderDebuggerTools"
+    - "/opt/Rider/bin/backend-log.xml:/etc/opt/JetBrains/RiderDebuggerTools/backend-log.xml"
+    - "/home/guilherme/.cache/JetBrains/Rider2025.1/log/DebuggerWorker/JetBrains.Debugger.Worker.2026_1_16_14_37_13:/var/opt/JetBrains/RiderDebuggerTools:rw"
+    working_dir: "/app"
+  orders:
+    build:
+      context: "/home/guilherme/RiderProjects/AlerquimTeste"
+      dockerfile: "Orders.API/Dockerfile"
+      target: "base"
+      args:
+        BUILD_CONFIGURATION: "Debug"
+    command: []
+    entrypoint:
+    - "/opt/JetBrains/RiderDebuggerTools/linux-x64/JetBrains.Debugger.Worker"
+    - "--runtimeconfig"
+    - "/opt/JetBrains/RiderDebuggerTools/JetBrains.Debugger.Worker.runtimeconfig.json"
+    - "--mode=server"
+    - "--frontend-port=57000"
+    - "--backend-port=57200"
+    - "--roslyn-worker-port=57402"
+    - "--timeout=60"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      RIDER_DEBUGGER_LOG_DIR: "/var/opt/JetBrains/RiderDebuggerTools"
+      RESHARPER_LOG_CONF: "/etc/opt/JetBrains/RiderDebuggerTools/backend-log.xml"
+    image: "orders.api:dev"
+    ports:
+    - "127.0.0.1:57002:57000"
+    - "127.0.0.1:57202:57200"
+    - "127.0.0.1:57402:57402"
+    volumes:
+    - "/home/guilherme/RiderProjects/AlerquimTeste/Orders.API:/app:rw"
+    - "/home/guilherme/RiderProjects/AlerquimTeste:/src:rw"
+    - "/home/guilherme/.nuget/packages:/home/app/.nuget/packages"
+    - "/home/guilherme/.local/share/JetBrains/RiderRemoteDebugger/2025.1.4/Linux64:/opt/JetBrains/RiderDebuggerTools"
+    - "/opt/Rider/bin/backend-log.xml:/etc/opt/JetBrains/RiderDebuggerTools/backend-log.xml"
+    - "/home/guilherme/.cache/JetBrains/Rider2025.1/log/DebuggerWorker/JetBrains.Debugger.Worker.2026_1_16_14_37_13:/var/opt/JetBrains/RiderDebuggerTools:rw"
+    working_dir: "/app"
